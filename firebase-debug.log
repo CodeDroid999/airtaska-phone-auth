@@ -1,0 +1,103 @@
+[debug] [2024-04-26T08:23:50.833Z] ----------------------------------------------------------------------
+[debug] [2024-04-26T08:23:50.836Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-04-26T08:23:50.837Z] CLI Version:   13.7.5
+[debug] [2024-04-26T08:23:50.838Z] Platform:      win32
+[debug] [2024-04-26T08:23:50.838Z] Node Version:  v20.12.2
+[debug] [2024-04-26T08:23:50.838Z] Time:          Fri Apr 26 2024 11:23:50 GMT+0300 (East Africa Time)
+[debug] [2024-04-26T08:23:50.838Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-04-26T08:23:50.850Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-26T08:23:50.851Z] > authorizing via signed-in user (mwangitevin37@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\hp\Desktop\airtaska-phone-auth
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-04-26T08:24:07.497Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-04-26T08:24:08.525Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-04-26T08:24:08.527Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project airtaska-authentication (airtaska-authentication) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2024-04-26T08:24:11.643Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/airtaska-authentication/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-04-26T08:24:11.643Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/airtaska-authentication/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/airtaska-authentication
+[debug] [2024-04-26T08:24:14.134Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/airtaska-authentication/services/firebasedatabase.googleapis.com 200
+[debug] [2024-04-26T08:24:14.134Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/airtaska-authentication/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2024-04-26T08:24:14.140Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/airtaska-authentication/locations/-/instances/airtaska-authentication-default-rtdb [none]
+[debug] [2024-04-26T08:24:16.521Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/airtaska-authentication/locations/-/instances/airtaska-authentication-default-rtdb 200
+[debug] [2024-04-26T08:24:16.522Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/airtaska-authentication/locations/-/instances/airtaska-authentication-default-rtdb {"name":"projects/480731115943/locations/us-central1/instances/airtaska-authentication-default-rtdb","project":"projects/480731115943","databaseUrl":"https://airtaska-authentication-default-rtdb.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2024-04-26T08:24:21.082Z] >>> [apiv2][query] GET https://airtaska-authentication-default-rtdb.firebaseio.com/.settings/rules.json [none]
+[debug] [2024-04-26T08:24:21.705Z] <<< [apiv2][status] GET https://airtaska-authentication-default-rtdb.firebaseio.com/.settings/rules.json 200
+[debug] [2024-04-26T08:24:21.705Z] <<< [apiv2][body] GET https://airtaska-authentication-default-rtdb.firebaseio.com/.settings/rules.json [stream]
+[info] +  Database Rules for airtaska-authentication-default-rtdb have been written to database.rules.json. 
+[info] Future modifications to database.rules.json will update Realtime Database Security Rules when you run
+[info] firebase deploy.
+[info] 
+=== Firestore Setup
+[debug] [2024-04-26T08:24:21.709Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/airtaska-authentication/services/firestore.googleapis.com [none]
+[debug] [2024-04-26T08:24:21.709Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/airtaska-authentication/services/firestore.googleapis.com x-goog-quota-user=projects/airtaska-authentication
+[debug] [2024-04-26T08:24:23.907Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/airtaska-authentication/services/firestore.googleapis.com 200
+[debug] [2024-04-26T08:24:23.907Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/airtaska-authentication/services/firestore.googleapis.com [omitted]
+[debug] [2024-04-26T08:24:23.909Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/airtaska-authentication/databases/(default) [none]
+[debug] [2024-04-26T08:24:24.901Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/airtaska-authentication/databases/(default) 200
+[debug] [2024-04-26T08:24:24.901Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/airtaska-authentication/databases/(default) {"name":"projects/airtaska-authentication/databases/(default)","uid":"bc4fcea6-f76e-4d69-8a9d-ea054f5adb33","createTime":"2024-04-26T08:22:19.841227Z","updateTime":"2024-04-26T08:22:19.841227Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-04-26T08:22:19.841227Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IMrnpo2634UDMMu1yNG534UD"}
+[debug] [2024-04-26T08:24:24.901Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-04-26T08:24:24.902Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-04-26T08:24:24.902Z] > authorizing via signed-in user (mwangitevin37@gmail.com)
+[debug] [2024-04-26T08:24:24.902Z] [iam] checking project airtaska-authentication for permissions ["firebase.projects.get"]
+[debug] [2024-04-26T08:24:24.902Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/airtaska-authentication:testIamPermissions [none]
+[debug] [2024-04-26T08:24:24.902Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/airtaska-authentication:testIamPermissions x-goog-quota-user=projects/airtaska-authentication
+[debug] [2024-04-26T08:24:24.903Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/airtaska-authentication:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-04-26T08:24:26.882Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/airtaska-authentication:testIamPermissions 200
+[debug] [2024-04-26T08:24:26.882Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/airtaska-authentication:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-04-26T08:24:28.322Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/airtaska-authentication/releases pageSize=10&pageToken=
+[debug] [2024-04-26T08:24:29.796Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/airtaska-authentication/releases 200
+[debug] [2024-04-26T08:24:29.797Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/airtaska-authentication/releases {"releases":[{"name":"projects/airtaska-authentication/releases/cloud.firestore","rulesetName":"projects/airtaska-authentication/rulesets/33f901de-db47-46a0-b787-f1ad817425e8","createTime":"2024-04-26T08:22:28.936313Z","updateTime":"2024-04-26T08:22:28.936313Z"},{"name":"projects/airtaska-authentication/releases/firebase.storage/airtaska-authentication.appspot.com","rulesetName":"projects/airtaska-authentication/rulesets/199f8cf2-5bbe-404c-878e-a8ae32fcfc68","createTime":"2024-04-26T08:24:03.298729Z","updateTime":"2024-04-26T08:24:03.298729Z"}]}
+[debug] [2024-04-26T08:24:29.797Z] Found ruleset: projects/airtaska-authentication/rulesets/33f901de-db47-46a0-b787-f1ad817425e8
+[debug] [2024-04-26T08:24:29.797Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/airtaska-authentication/rulesets/33f901de-db47-46a0-b787-f1ad817425e8 [none]
+[debug] [2024-04-26T08:24:30.716Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/airtaska-authentication/rulesets/33f901de-db47-46a0-b787-f1ad817425e8 200
+[debug] [2024-04-26T08:24:30.716Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/airtaska-authentication/rulesets/33f901de-db47-46a0-b787-f1ad817425e8 [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-04-26T08:24:31.748Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/airtaska-authentication/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-04-26T08:24:31.752Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/airtaska-authentication/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-04-26T08:24:33.642Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/airtaska-authentication/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-04-26T08:24:33.643Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/airtaska-authentication/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2024-04-26T08:24:34.405Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/airtaska-authentication/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-04-26T08:24:34.405Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/airtaska-authentication/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/airtaska-authentication/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] 
+=== Storage Setup
+[info] 
+[info] Firebase Storage Security Rules allow you to define how and when to allow
+[info] uploads and downloads. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
