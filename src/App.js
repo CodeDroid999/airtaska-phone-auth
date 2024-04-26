@@ -45,7 +45,7 @@ const App = () => {
         window.confirmationResult = confirmationResult;
         setLoading(false);
         setShowOTP(true);
-        toast.success("OTP sended successfully!");
+        toast.success("OTP sent successfully!");
       })
       .catch((error) => {
         console.log(error);
@@ -67,6 +67,11 @@ const App = () => {
         setLoading(false);
       });
   }
+  // Function to redirect user to settings
+  const redirectToSettings = () => {
+    // Redirect to the desired URL upon successful login
+    window.location.href = `https://www.airtaska.com/settings/mobile-number/${ph}`;
+  };
 
   return (
     <div className="mx-auto max-w-[1280px] px-3 sm:px-6 md:px-16 bg-gray-100 min-h-screen">
@@ -80,9 +85,20 @@ const App = () => {
           <Toaster toastOptions={{ duration: 4000 }} />
           <div id="recaptcha-container"></div>
           {user ? (
-            <h2 className="text-center text-blue-950 font-medium text-2xl">
-              Phone number verification successful!
-            </h2>
+            <div>
+              <h2 className="text-center text-blue-950 font-medium text-2xl">
+                Phone number verification successful!
+              </h2>
+              <button
+                onClick={redirectToSettings} // Call redirectToSettings function
+                className="bg-green-800 w-full flex gap-1 items-center justify-center py-2.5 text-blue-950 rounded"
+              >
+                {loading && (
+                  <CgSpinner size={20} className="mt-1 animate-spin" />
+                )}
+                <span class="text-white">Continue</span>
+              </button>
+            </div>
           ) : (
             <div className="w-80 flex flex-col gap-4 rounded-lg p-4">
               {showOTP ? (
@@ -112,7 +128,7 @@ const App = () => {
                     {loading && (
                       <CgSpinner size={20} className="mt-1 animate-spin" />
                     )}
-                    <span>Verify OTP</span>
+                    <span class="text-white">Verify OTP</span>
                   </button>
                 </>
               ) : (
