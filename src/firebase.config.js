@@ -7,13 +7,14 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBhlvPkdYdEmByHhdsTLVrASxAqP2pudjI",
-  authDomain: "airtaska-authentication.firebaseapp.com",
-  projectId: "airtaska-authentication",
-  storageBucket: "airtaska-authentication.appspot.com",
-  messagingSenderId: "480731115943",
-  appId: "1:480731115943:web:96ef8da56cb97282d80682",
-  measurementId: "G-P2NEXHW6X0",
+  apiKey: "AIzaSyC9DMyKKlKHxybCZqImW_Qt9V14lIWxSTc",
+  authDomain: "northexpresskenya.firebaseapp.com",
+  databaseURL: "https://northexpresskenya-default-rtdb.firebaseio.com",
+  projectId: "northexpresskenya",
+  storageBucket: "northexpresskenya.appspot.com",
+  messagingSenderId: "498415498621",
+  appId: "1:498415498621:web:0cc11cd5435df214edc814",
+  measurementId: "G-MQXNWGXLNZ",
 };
 
 // Initialize Firebase
