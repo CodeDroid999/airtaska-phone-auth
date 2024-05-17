@@ -1,8 +1,7 @@
 import { BsFillShieldLockFill, BsTelephoneFill } from "react-icons/bs";
 import { CgSpinner } from "react-icons/cg";
-
 import OtpInput from "otp-input-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { auth } from "./firebase.config";
@@ -15,6 +14,16 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [showOTP, setShowOTP] = useState(false);
   const [user, setUser] = useState(null);
+  const [redirectUrl, setRedirectUrl] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedRedirectUrl = localStorage.getItem("redirectAfterAuth");
+      setRedirectUrl(
+        storedRedirectUrl || "https://www.airtaska.com/browse-tasks"
+      );
+    }
+  }, []);
 
   function onCaptchVerify() {
     if (!window.recaptchaVerifier) {
@@ -61,17 +70,13 @@ const App = () => {
         console.log(res);
         setUser(res.user);
         setLoading(false);
+        window.location.href = redirectUrl; // Redirect to the stored URL upon successful login
       })
       .catch((err) => {
         console.log(err);
         setLoading(false);
       });
   }
-  // Function to redirect user to settings
-  const redirectToSettings = () => {
-    // Redirect to the desired URL upon successful login
-    window.location.href = `https://www.airtaska.com/settings/mobile-number/${ph}`;
-  };
 
   return (
     <div className="mx-auto max-w-[1280px] px-3 sm:px-6 md:px-16 bg-gray-100 min-h-screen">
@@ -90,13 +95,13 @@ const App = () => {
                 Phone number verification successful!
               </h2>
               <button
-                onClick={redirectToSettings} // Call redirectToSettings function
+                onClick={() => (window.location.href = redirectUrl)} // Use stored redirect URL
                 className="bg-green-800 w-full flex gap-1 items-center justify-center py-2.5 text-blue-950 rounded"
               >
                 {loading && (
                   <CgSpinner size={20} className="mt-1 animate-spin" />
                 )}
-                <span class="text-white">Continue</span>
+                <span className="text-white">Continue</span>
               </button>
             </div>
           ) : (
@@ -128,7 +133,7 @@ const App = () => {
                     {loading && (
                       <CgSpinner size={20} className="mt-1 animate-spin" />
                     )}
-                    <span class="text-white">Verify OTP</span>
+                    <span className="text-white">Verify OTP</span>
                   </button>
                 </>
               ) : (
