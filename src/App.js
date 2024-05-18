@@ -74,7 +74,7 @@ const App = () => {
       .then(() => {
         setUser(null);
         toast.success("Save your number now!");
-        window.location.href = `https://www.airtaska.com/auth/${ph}`;
+        window.location.href = `https://www.airtaska.com/settings/update-phoneNumber/${ph}`;
       })
       .catch((error) => {
         console.error("Error logging out:", error);
@@ -170,3 +170,4 @@ const App = () => {
     </div>
   );
 };
+export default App();
