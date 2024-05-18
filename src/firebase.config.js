@@ -7,13 +7,13 @@ import { getAuth, signOut } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAXWWK4eDca27Ywrv5wb5s0XV7FOSE1kMY",
-  authDomain: "airtaska-18e8a.firebaseapp.com",
-  projectId: "airtaska-18e8a",
-  storageBucket: "airtaska-18e8a.appspot.com",
-  messagingSenderId: "994864550546",
-  appId: "1:994864550546:web:8b3ada161b3584e4454c4b",
-  measurementId: "G-MJ1D6YPN8K",
+  apiKey: "AIzaSyCDn2tkJGDo60RyMz-1oUFIaWJw2Xevoyc",
+  authDomain: "airtaska-authenticate.firebaseapp.com",
+  projectId: "airtaska-authenticate",
+  storageBucket: "airtaska-authenticate.appspot.com",
+  messagingSenderId: "756623350641",
+  appId: "1:756623350641:web:2c6eb9b56250114354f4d0",
+  measurementId: "G-7JBQC82GVP",
 };
 
 // Initialize Firebase
