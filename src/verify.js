@@ -20,7 +20,7 @@ const App = () => {
     if (typeof window !== "undefined") {
       const storedRedirectUrl = localStorage.getItem("redirectAfterAuth");
       setRedirectUrl(
-        storedRedirectUrl || "https://www.airtaska.com/browse-tasks"
+        storedRedirectUrl || `https://www.airtaska.com/update-phoneNumber/${ph}`
       );
     }
   }, []);
