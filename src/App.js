@@ -4,7 +4,7 @@ import OtpInput from "otp-input-react";
 import { useState, useEffect } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { auth } from "./firebase.config";
+import { auth, signOut } from "./firebase.config";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { toast, Toaster } from "react-hot-toast";
 
@@ -69,6 +69,19 @@ const App = () => {
       });
   }
 
+  function handleContinue() {
+    signOut(auth)
+      .then(() => {
+        setUser(null);
+        toast.success("Save your number now!");
+        window.location.href = `https://www.airtaska.com/settings/update-phoneNumber/${ph}`;
+      })
+      .catch((error) => {
+        console.error("Error logging out:", error);
+        toast.error("Error logging out. Please try again.");
+      });
+  }
+
   return (
     <div className="mx-auto max-w-[1280px] px-3 sm:px-6 md:px-16 bg-gray-100 min-h-screen">
       <header className="flex flex-row items-center justify-between  bg-gray-100 py-2 duration-300 ease-in">
@@ -86,9 +99,7 @@ const App = () => {
                 Phone number verification successful!
               </h2>
               <button
-                onClick={() =>
-                  (window.location.href = `https://www.airtaska.com/settings/update-phoneNumber/${ph}`)
-                } // Use stored redirect URL
+                onClick={handleContinue} // Use stored redirect URL
                 className="bg-green-800 w-full flex gap-1 items-center justify-center py-2.5 text-blue-950 rounded"
               >
                 {loading && (
