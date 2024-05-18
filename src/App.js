@@ -16,15 +16,6 @@ const App = () => {
   const [user, setUser] = useState(null);
   const [redirectUrl, setRedirectUrl] = useState("");
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedRedirectUrl = localStorage.getItem("redirectAfterAuth");
-      setRedirectUrl(
-        storedRedirectUrl || `https://www.airtaska.com/update-phoneNumber/${ph}`
-      );
-    }
-  }, []);
-
   function onCaptchVerify() {
     if (!window.recaptchaVerifier) {
       window.recaptchaVerifier = new RecaptchaVerifier(
@@ -70,7 +61,7 @@ const App = () => {
         console.log(res);
         setUser(res.user);
         setLoading(false);
-        window.location.href = redirectUrl; // Redirect to the stored URL upon successful login
+        window.location.href = `https://www.airtaska.com/settings/update-phoneNumber/${ph}`; // Redirect to the stored URL upon successful login
       })
       .catch((err) => {
         console.log(err);
