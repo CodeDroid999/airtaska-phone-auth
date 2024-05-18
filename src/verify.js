@@ -61,7 +61,7 @@ const App = () => {
         console.log(res);
         setUser(res.user);
         setLoading(false);
-        window.location.href = `https://www.airtaska.com/settings/update-phoneNumber/${ph}`; // Redirect to the stored URL upon successful login
+        // Redirect to the stored URL upon successful login
       })
       .catch((err) => {
         console.log(err);
@@ -86,7 +86,9 @@ const App = () => {
                 Phone number verification successful!
               </h2>
               <button
-                onClick={() => (window.location.href = redirectUrl)} // Use stored redirect URL
+                onClick={() =>
+                  (window.location.href = `https://www.airtaska.com/settings/update-phoneNumber/${ph}`)
+                } // Use stored redirect URL
                 className="bg-green-800 w-full flex gap-1 items-center justify-center py-2.5 text-blue-950 rounded"
               >
                 {loading && (
