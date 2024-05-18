@@ -8,7 +8,7 @@ import { auth, signOut } from "./firebase.config";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { toast, Toaster } from "react-hot-toast";
 
-const App = () => {
+const Verify = () => {
   const [otp, setOtp] = useState("");
   const [ph, setPh] = useState("");
   const [loading, setLoading] = useState(false);
@@ -36,11 +36,11 @@ const App = () => {
     setLoading(true);
     onCaptchVerify();
 
-    const appVerifier = window.recaptchaVerifier;
+    const VerifyVerifier = window.recaptchaVerifier;
 
     const formatPh = "+" + ph;
 
-    signInWithPhoneNumber(auth, formatPh, appVerifier)
+    signInWithPhoneNumber(auth, formatPh, VerifyVerifier)
       .then((confirmationResult) => {
         window.confirmationResult = confirmationResult;
         setLoading(false);
@@ -74,7 +74,7 @@ const App = () => {
       .then(() => {
         setUser(null);
         toast.success("Save your number now!");
-        window.location.href = `https://www.airtaska.com/settings/update-phoneNumber/${ph}`;
+        window.location.href = `https://www.airtaska.com/auth/${ph}`;
       })
       .catch((error) => {
         console.error("Error logging out:", error);
@@ -171,4 +171,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Verify;
