@@ -16,7 +16,8 @@ const App = () => {
   const [user, setUser] = useState(null);
   const [redirectUrl, setRedirectUrl] = useState("");
 
-  function onCaptchVerify() {
+  async function onCaptchVerify() {
+    // Debug: Make it async
     if (!window.recaptchaVerifier) {
       window.recaptchaVerifier = new RecaptchaVerifier(
         "recaptcha-container",
@@ -170,4 +171,4 @@ const App = () => {
     </div>
   );
 };
-export default App();
+export default App;

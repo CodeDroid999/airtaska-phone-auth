@@ -16,7 +16,8 @@ const Verify = () => {
   const [user, setUser] = useState(null);
   const [redirectUrl, setRedirectUrl] = useState("");
 
-  function onCaptchVerify() {
+  async function onCaptchVerify() {
+    // Debug: Make it async
     if (!window.recaptchaVerifier) {
       window.recaptchaVerifier = new RecaptchaVerifier(
         "recaptcha-container",
@@ -36,11 +37,11 @@ const Verify = () => {
     setLoading(true);
     onCaptchVerify();
 
-    const VerifyVerifier = window.recaptchaVerifier;
+    const appVerifier = window.recaptchaVerifier;
 
     const formatPh = "+" + ph;
 
-    signInWithPhoneNumber(auth, formatPh, VerifyVerifier)
+    signInWithPhoneNumber(auth, formatPh, appVerifier)
       .then((confirmationResult) => {
         window.confirmationResult = confirmationResult;
         setLoading(false);
@@ -74,7 +75,7 @@ const Verify = () => {
       .then(() => {
         setUser(null);
         toast.success("Save your number now!");
-        window.location.href = `https://www.airtaska.com/auth/${ph}`;
+        window.location.href = `https://www.airtaska.com/settings/update-phoneNumber/${ph}`;
       })
       .catch((error) => {
         console.error("Error logging out:", error);
@@ -170,5 +171,4 @@ const Verify = () => {
     </div>
   );
 };
-
 export default Verify;
